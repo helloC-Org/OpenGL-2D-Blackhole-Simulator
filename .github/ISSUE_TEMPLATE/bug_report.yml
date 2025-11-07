@@ -1,0 +1,99 @@
+name: Bug Report
+description: Report unexpected behavior or errors in the simulation
+title: "[Bug]: "
+labels: ["bug", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a bug! Please fill out the information below to help us resolve it quickly.
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Bug Description
+      description: A clear description of what the bug is
+      placeholder: Tell us what went wrong
+    validations:
+      required: true
+
+  - type: textarea
+    id: expected
+    attributes:
+      label: Expected Behavior
+      description: What did you expect to happen?
+      placeholder: Describe the expected behavior
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to Reproduce
+      description: How can we reproduce this bug?
+      placeholder: |
+        1. Run './run.sh'
+        2. Wait for frame 500
+        3. See error
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      description: What operating system are you using?
+      options:
+        - macOS
+        - Ubuntu/Debian
+        - Other Linux
+        - Windows
+        - Other (please specify in additional context)
+    validations:
+      required: true
+
+  - type: input
+    id: os-version
+    attributes:
+      label: OS Version
+      description: "e.g., macOS 14.0, Ubuntu 22.04, Windows 11"
+      placeholder: "macOS 14.0"
+    validations:
+      required: true
+
+  - type: input
+    id: cmake-version
+    attributes:
+      label: CMake Version
+      description: Run `cmake --version` and paste the output
+      placeholder: "cmake version 3.27.0"
+    validations:
+      required: true
+
+  - type: input
+    id: compiler
+    attributes:
+      label: Compiler Version
+      description: Run `c++ --version` or `g++ --version` and paste the first line
+      placeholder: "Apple clang version 15.0.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: error-output
+    attributes:
+      label: Error Output
+      description: Paste any error messages or unexpected output
+      render: shell
+      placeholder: Paste error messages here
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Add any other context about the problem
+      placeholder: Screenshots, logs, or additional information
+    validations:
+      required: false

@@ -1,0 +1,121 @@
+name: Build/Compilation Issue
+description: Report problems building or compiling the project
+title: "[Build]: "
+labels: ["build", "needs-triage"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for reporting a build issue! Please provide the details below to help us troubleshoot.
+
+  - type: dropdown
+    id: build-method
+    attributes:
+      label: Build Method
+      description: How are you trying to build the project?
+      options:
+        - Using run.sh script (Linux/macOS)
+        - Using build.bat script (Windows)
+        - Manual CMake commands
+        - Other (please specify below)
+    validations:
+      required: true
+
+  - type: dropdown
+    id: dependency-manager
+    attributes:
+      label: Dependency Manager
+      description: How did you install dependencies?
+      options:
+        - vcpkg
+        - Homebrew (macOS)
+        - apt (Ubuntu/Debian)
+        - System packages (other)
+        - Haven't installed dependencies yet
+        - Not sure
+    validations:
+      required: true
+
+  - type: textarea
+    id: full-error
+    attributes:
+      label: Full Error Output
+      description: Paste the complete error output from your terminal
+      render: shell
+      placeholder: |
+        Paste the full output here, including:
+        - CMake configuration output
+        - Compilation errors
+        - Linker errors
+    validations:
+      required: true
+
+  - type: dropdown
+    id: os
+    attributes:
+      label: Operating System
+      description: What operating system are you using?
+      options:
+        - macOS
+        - Ubuntu/Debian
+        - Other Linux
+        - Windows
+        - Other (please specify below)
+    validations:
+      required: true
+
+  - type: input
+    id: os-version
+    attributes:
+      label: OS Version
+      description: "e.g., macOS 14.0, Ubuntu 22.04, Windows 11"
+      placeholder: "macOS 14.0"
+    validations:
+      required: true
+
+  - type: input
+    id: cmake-version
+    attributes:
+      label: CMake Version
+      description: Run `cmake --version`
+      placeholder: "cmake version 3.27.0"
+    validations:
+      required: true
+
+  - type: input
+    id: compiler
+    attributes:
+      label: Compiler
+      description: Run `c++ --version` or `g++ --version`
+      placeholder: "Apple clang version 15.0.0"
+    validations:
+      required: true
+
+  - type: textarea
+    id: attempted-solutions
+    attributes:
+      label: What Have You Tried?
+      description: List any troubleshooting steps you've already attempted
+      placeholder: |
+        - Installed dependencies via vcpkg
+        - Updated CMake to latest version
+        - etc.
+    validations:
+      required: false
+
+  - type: input
+    id: vcpkg-root
+    attributes:
+      label: VCPKG_ROOT (if using vcpkg)
+      description: Run `echo $VCPKG_ROOT` (Linux/macOS) or `echo %VCPKG_ROOT%` (Windows)
+      placeholder: "/Users/username/vcpkg"
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Any other information that might help
+    validations:
+      required: false

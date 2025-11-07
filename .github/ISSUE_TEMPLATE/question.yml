@@ -1,0 +1,55 @@
+name: Question or Help
+description: Ask a question or request help understanding the simulator
+title: "[Question]: "
+labels: ["question", "help-wanted"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Have a question about how the simulator works or need help understanding something? Ask away!
+
+  - type: textarea
+    id: question
+    attributes:
+      label: Your Question
+      description: What would you like to know?
+      placeholder: "How does..."
+    validations:
+      required: true
+
+  - type: dropdown
+    id: topic
+    attributes:
+      label: Topic Area
+      description: What is your question about?
+      options:
+        - Physics concepts (Schwarzschild metric, geodesics, etc.)
+        - Code implementation
+        - Build and setup
+        - Simulation behavior
+        - Mathematics (RK4, numerical integration)
+        - OpenGL and graphics
+        - General usage
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: context
+    attributes:
+      label: What Have You Tried?
+      description: What documentation have you read? What have you tried to understand this?
+      placeholder: |
+        - Read the README
+        - Looked at the code in...
+        - Tried changing...
+    validations:
+      required: false
+
+  - type: textarea
+    id: additional
+    attributes:
+      label: Additional Context
+      description: Anything else that might help us understand your question
+    validations:
+      required: false
